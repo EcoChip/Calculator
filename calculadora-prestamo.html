@@ -1,0 +1,82 @@
+<!-- calculadora-prestamo.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Préstamo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Calculadora de Préstamo</h2>
+    <input type="number" id="monto" placeholder="Monto del préstamo" step="any">
+    <input type="number" id="tasa" placeholder="Tasa de interés anual (%)" step="any">
+    <input type="number" id="plazo" placeholder="Plazo en años" step="any">
+    <button onclick="calcularPrestamo()">Calcular Pago Mensual</button>
+    <div id="resultado" class="result"></div>
+</div>
+
+<script>
+    function calcularPrestamo() {
+        const monto = parseFloat(document.getElementById('monto').value);
+        const tasa = parseFloat(document.getElementById('tasa').value) / 100 / 12;
+        const plazo = parseInt(document.getElementById('plazo').value) * 12;
+        const resultado = document.getElementById('resultado');
+        
+        if (!monto || !tasa || !plazo) {
+            resultado.textContent = 'Por favor ingresa todos los valores.';
+            return;
+        }
+
+        const pagoMensual = (monto * tasa) / (1 - Math.pow(1 + tasa, -plazo));
+        resultado.textContent = `Pago mensual: $${pagoMensual.toFixed(2)}`;
+    }
+</script>
+
+</body>
+</html>
