@@ -48,16 +48,26 @@
             margin-top: 15px;
             font-size: 18px;
         }
+        .info {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <h2>Calculadora IMC</h2>
+    <p class="info">
+        El IMC es un indicador utilizado para evaluar si una persona tiene un peso saludable en relación con su altura.
+        Para usar esta calculadora, solo tienes que ingresar tu peso (en kilogramos) y tu altura (en metros), y te 
+        mostrará el valor de tu IMC.
+    </p>
     <input type="number" id="peso" placeholder="Ingresa tu peso (kg)" step="any">
     <input type="number" id="altura" placeholder="Ingresa tu altura (m)" step="any">
     <button onclick="calcularIMC()">Calcular IMC</button>
     <div id="resultado" class="result"></div>
+    <button onclick="window.location.href='index.html'">Volver a la página principal</button>
 </div>
 
 <script>
