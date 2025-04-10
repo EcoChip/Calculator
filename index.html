@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Calculadoras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+        h1 {
+            color: #333;
+        }
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 15px;
+            background-color: #3498db;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Bienvenido a la Página de Calculadoras</h1>
+    <p>Haz clic en una de las opciones a continuación para acceder a la calculadora correspondiente.</p>
+    
+    <div class="button-container">
+        <button class="btn" onclick="location.href='calculadora-matematica.html'">Calculadora Matemática</button>
+        <button class="btn" onclick="location.href='calculadora-imc.html'">Calculadora IMC</button>
+        <button class="btn" onclick="location.href='calculadora-prestamo.html'">Calculadora de Préstamos</button>
+        <button class="btn" onclick="location.href='calculadora-impuesto.html'">Calculadora de Impuestos</button>
+        <button class="btn" onclick="location.href='calculadora-conversion.html'">Conversión de Unidades</button>
+        <button class="btn" onclick="location.href='calculadora-porcentaje.html'">Calculadora de Porcentaje</button>
+    </div>
+</div>
+
+</body>
+</html>
