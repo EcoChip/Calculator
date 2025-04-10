@@ -53,12 +53,20 @@
             justify-content: space-between;
             margin-bottom: 10px;
         }
+        .info {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <h2>Calculadora Matemática</h2>
+    <p class="info">
+        Esta calculadora sirve para realizar operaciones matemáticas básicas como suma, resta, multiplicación y división. 
+        Para usarla, solo tienes que ingresar los números y elegir la operación que deseas realizar.
+    </p>
     <div class="input-container">
         <input type="text" id="display" disabled>
     </div>
@@ -86,6 +94,7 @@
         <button onclick="calculate()">=</button>
         <button onclick="appendToDisplay('/')">/</button>
     </div>
+    <button onclick="window.location.href='index.html'">Volver a la página principal</button>
 </div>
 
 <script>
